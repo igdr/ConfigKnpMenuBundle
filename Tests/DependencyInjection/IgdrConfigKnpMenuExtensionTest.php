@@ -3,13 +3,13 @@
 namespace Igdr\Bundle\PhumborBundle\Tests\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
-use Igdr\Bundle\ConfigKnpMenuBundle\DependencyInjection\JbConfigKnpMenuExtension;
+use Igdr\Bundle\ConfigKnpMenuBundle\DependencyInjection\IgdrConfigKnpMenuExtension;
 use Symfony\Component\DependencyInjection\ParameterBag\ParameterBag;
 
 /**
  * Test Extension
  */
-class JbConfigKnpMenuExtensionTest extends \PHPUnit_Framework_TestCase
+class IgdrConfigKnpMenuExtensionTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * Test loading data from file
@@ -26,7 +26,7 @@ class JbConfigKnpMenuExtensionTest extends \PHPUnit_Framework_TestCase
     public static function loadConfiguration()
     {
         $containerBuilder = self::createContainer();
-        $extension = new JbConfigKnpMenuExtension();
+        $extension = new IgdrConfigKnpMenuExtension();
         $extension->load(array(), $containerBuilder);
 
         return $containerBuilder->getParameter('igdr_config_menu.menu.configuration');
@@ -43,10 +43,10 @@ class JbConfigKnpMenuExtensionTest extends \PHPUnit_Framework_TestCase
     {
         $container = new ContainerBuilder(new ParameterBag(array_merge(array(
             'kernel.bundles'     => array(
-                'JbTest1Bundle' =>
-                    'Jb\\Bundle\\ConfigKnpMenuBundle\\Tests\\DependencyInjection\\Fixtures\\Bundle1\\JbTest1Bundle',
-                'JbTest2Bundle' =>
-                    'Jb\\Bundle\\ConfigKnpMenuBundle\\Tests\\DependencyInjection\\Fixtures\\Bundle2\\JbTest2Bundle'
+                'IgdrTest1Bundle' =>
+                    'Igdr\\Bundle\\ConfigKnpMenuBundle\\Tests\\DependencyInjection\\Fixtures\\Bundle1\\IgdrTest1Bundle',
+                'IgdrTest2Bundle' =>
+                    'Igdr\\Bundle\\ConfigKnpMenuBundle\\Tests\\DependencyInjection\\Fixtures\\Bundle2\\IgdrTest2Bundle'
             ),
         ), $data)));
 

@@ -5,8 +5,8 @@ namespace Igdr\Bundle\ConfigKnpMenuBundle\Tests\DependencyInjection\Fixtures\Bun
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
 /**
- * JbTest1Bundle
+ * IgdrTest1Bundle
  */
-class JbTest1Bundle extends Bundle
+class IgdrTest1Bundle extends Bundle
 {
 }

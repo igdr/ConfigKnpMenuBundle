@@ -28,7 +28,7 @@ Then enable it in your AppKernel.php with the KnpMenuBundle :
     $bundles = array(
         ...
         new Knp\Bundle\MenuBundle\KnpMenuBundle(),
-        new Igdr\Bundle\ConfigKnpMenuBundle\JbConfigKnpMenuBundle(),
+        new Igdr\Bundle\ConfigKnpMenuBundle\IgdrConfigKnpMenuBundle(),
     );
 
 Documentation

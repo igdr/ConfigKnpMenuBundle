@@ -10,7 +10,7 @@ use Symfony\Component\Config\FileLocator;
 /**
  * This is the class that loads and manages your bundle configuration
  */
-class JbConfigKnpMenuExtension extends Extension
+class IgdrConfigKnpMenuExtension extends Extension
 {
     /**
      * {@inheritDoc}

@@ -1,7 +1,7 @@
 <?php
 namespace Igdr\Bundle\ConfigKnpMenuBundle\Tests\Menu;
 
-use Igdr\Bundle\PhumborBundle\Tests\DependencyInjection\JbConfigKnpMenuExtensionTest;
+use Igdr\Bundle\PhumborBundle\Tests\DependencyInjection\IgdrConfigKnpMenuExtensionTest;
 use Knp\Menu\Silex\RouterAwareFactory;
 use Igdr\Bundle\ConfigKnpMenuBundle\Menu\MenuBuilder;
 use Symfony\Component\HttpFoundation\Request;
@@ -29,7 +29,7 @@ class MenuBuilderTest extends \PHPUnit_Framework_TestCase
         $menuFactory = new RouterAwareFactory($urlGenerator);
 
         $eventDispatcher = $this->getMock('Symfony\\Component\\EventDispatcher\\EventDispatcherInterface');
-        $configuration = JbConfigKnpMenuExtensionTest::loadConfiguration();
+        $configuration = IgdrConfigKnpMenuExtensionTest::loadConfiguration();
 
         $this->menuBuilder = new MenuBuilder($menuFactory, $eventDispatcher);
         $this->menuBuilder->setConfiguration($configuration);
