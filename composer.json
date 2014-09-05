@@ -1,0 +1,18 @@
+{
+    "name": "igdr/config-knp-menu-bundle",
+    "type": "symfony-bundle",
+    "description": "Configure your knp menus with yaml files accross your project bundles",
+    "keywords": ["Knp", "UI", "User Interface", "Menu", "Navigation", "Symfony"],
+    "homepage": "https://github.com/igdr/ConfigKnpMenuBundle",
+    "license": "MIT",
+    "require": {
+        "knplabs/knp-menu-bundle": "2.0.*",
+        "symfony/event-dispatcher": "~2.1"
+    },
+    "autoload": {
+        "psr-0": {
+            "Igdr\\Bundle\\ConfigKnpMenuBundle": ""
+        }
+    },
+    "target-dir": "Igdr/Bundle/ConfigKnpMenuBundle"
+}

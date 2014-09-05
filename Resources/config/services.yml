@@ -1,0 +1,9 @@
+parameters:
+    igdr_config_menu.menu.builder.class: Igdr\Bundle\ConfigKnpMenuBundle\Menu\MenuBuilder
+
+services:
+    igdr_config_menu.menu.builder:
+        class: %igdr_config_menu.menu.builder.class%
+        arguments:
+            - "@knp_menu.factory"
+            - "@event_dispatcher"
