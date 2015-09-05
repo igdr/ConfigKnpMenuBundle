@@ -22,7 +22,7 @@ class IgdrConfigKnpMenuExtension extends Extension
         foreach ($container->getParameter('kernel.bundles') as $bundle) {
             $reflection = new \ReflectionClass($bundle);
             if (is_file($file = dirname($reflection->getFilename()) . '/Resources/config/navigation.yml')) {
-                $bundleConfig = Yaml::parse(realpath($file));
+                $bundleConfig = Yaml::parse(file_get_contents(realpath($file)));
 
                 if (is_array($bundleConfig)) {
                     $configuredMenus = array_replace_recursive($configuredMenus, $bundleConfig);
