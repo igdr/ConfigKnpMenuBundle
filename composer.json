@@ -6,7 +6,7 @@
     "homepage": "https://github.com/igdr/ConfigKnpMenuBundle",
     "license": "MIT",
     "require": {
-        "knplabs/knp-menu-bundle": "2.0.*",
+        "knplabs/knp-menu-bundle": "2.*",
         "symfony/event-dispatcher": "~2.1"
     },
     "autoload": {
