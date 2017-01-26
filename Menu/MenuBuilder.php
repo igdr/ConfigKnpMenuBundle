@@ -5,6 +5,7 @@ use Igdr\Bundle\ConfigKnpMenuBundle\Event\ConfigureMenuEvent;
 use Knp\Menu\FactoryInterface;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\RequestStack;
 
 /**
  * Menu Builder
@@ -43,8 +44,8 @@ class MenuBuilder
      */
     public function __construct(FactoryInterface $factory, EventDispatcherInterface $dispatcher, $configuration = array())
     {
-        $this->factory       = $factory;
-        $this->dispatcher    = $dispatcher;
+        $this->factory = $factory;
+        $this->dispatcher = $dispatcher;
         $this->configuration = $configuration;
     }
 
@@ -61,19 +62,21 @@ class MenuBuilder
     /**
      * Create a menu from the configuration loaded
      *
-     * @param Request $request    the symfony request
-     * @param string  $type       the type of menu to load. It must match a key in the first level of configuration array
-     * @param array   $attributes the default attributes for menu
+     * @param RequestStack $requestStack the symfony request
+     * @param string       $type         the type of menu to load. It must match a key in the first level of configuration array
+     * @param array        $attributes   the default attributes for menu
      *
      * @return \Knp\Menu\ItemInterface
      *
      * @throws \Igdr\Bundle\ConfigKnpMenuBundle\Menu\Exception\MenuConfigurationNotFoundException
      */
-    public function createMenu(Request $request, $type, $attributes = array())
+    public function createMenu(RequestStack $requestStack, $type, $attributes = array())
     {
+        $request = $requestStack->getMasterRequest();
+
         // Check if the menu type asked by the service has a configuration
         if (empty($this->configuration[$type])) {
-            throw new Exception\MenuConfigurationNotFoundException($type . " configuration not found");
+            throw new Exception\MenuConfigurationNotFoundException($type." configuration not found");
         }
 
         $attributes = $this->configuration[$type] + $attributes;
